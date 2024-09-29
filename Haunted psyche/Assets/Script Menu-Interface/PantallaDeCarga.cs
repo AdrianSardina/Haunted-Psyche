@@ -70,7 +70,7 @@ public class PantallaDeCarga : MonoBehaviour
             // Incrementar el progreso visual de forma fluida
             if (progresoVisual < 1f) // Asegurarse de que no exceda el 100%
             {
-                progresoVisual += Time.deltaTime / 25f; // Ajusta la velocidad de incremento aquí
+                progresoVisual += Time.deltaTime / 20f; // Ajusta la velocidad de incremento aquí
             }
 
             // Actualizar la barra de progreso
