@@ -1,31 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Flashlight : MonoBehaviour,ISwitchable
+public class Flashlight : MonoBehaviour
 {
     bool isActive;
-
-    bool ISwitchable.IsActive => isActive;
+    float flashlightLevel;
+    float maximunBattery;
+    float drainRate;
 
     private void Start()
     {
         isActive = false; 
+        flashlightLevel = 100;
+        drainRate = 2;
+        maximunBattery = 100;
     }
 
-    void ISwitchable.Toggle()
+    public void Toggle()
     {
         if (isActive)
         {
+            //Turn off
             isActive = false;
-            Debug.Log("linterna apagada");
+            StopCoroutine(Drain());
         }
         else
         {
+            //Turn on
             isActive = true;
-            Debug.Log("linterna prendida");
+            StartCoroutine(Drain());
+           
         }
     }
+    private IEnumerator Drain()
+    {
+        
 
-    
+        while (flashlightLevel >=0 && isActive) 
+        {
+            Debug.Log(flashlightLevel);
+            flashlightLevel -= drainRate;
+            if (flashlightLevel < 0)
+            {
+                flashlightLevel = 0;
+                Toggle();
+            }
+           yield return new WaitForSeconds(1f);
+        }
+        
+        yield return null ;
+    }
+    private void Recharge( float amount) 
+    {
+        flashlightLevel =Mathf.Min(flashlightLevel+amount,maximunBattery) ;
+    }
+
 }

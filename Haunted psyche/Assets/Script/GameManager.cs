@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    int items;
+    int pickedFragments;
+    int totalFragments;
     void Start()
     {
-        items = 6;
-        
+       pickedFragments = 0;
+        totalFragments = 6; 
     }
 
-   
-    void Update()
+    public void AddFragment()
     {
+        pickedFragments++;
+        Debug.Log(pickedFragments);
+        if (pickedFragments == totalFragments) 
+        {
+            //Victoria
+        }
         
+        //Sonidos
     }
+
 }

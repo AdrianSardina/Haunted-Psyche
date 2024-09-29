@@ -18,6 +18,7 @@ public class PlayerControllers : MonoBehaviour
     Move move;
     JumpScript jumpScript;
     GrabObject grabObject;
+    Flashlight flashlight;
     #endregion
     void Start()
     {
@@ -29,12 +30,17 @@ public class PlayerControllers : MonoBehaviour
         move = GetComponent<Move>();
         jumpScript = GetComponent<JumpScript>();
         grabObject = GetComponent<GrabObject>();
+        flashlight = GetComponent<Flashlight>();
     }
     private void Update()
     {
         controller.Look();
         isGrounded = Physics.Raycast(transform.position,Vector3.down,2*0.5f +0.2f, ground);
 
+        if (Input.GetKeyDown(KeyCode.F)) 
+        {
+            flashlight.Toggle();
+        }
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
 
