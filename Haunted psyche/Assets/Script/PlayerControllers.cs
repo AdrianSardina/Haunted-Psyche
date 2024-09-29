@@ -27,7 +27,7 @@ public class PlayerControllers : MonoBehaviour
         //Actions Scripts
 
         controller = GetComponent<CameraController>();
-        move = GetComponent<Move>();
+        move       = GetComponent<Move>();
         jumpScript = GetComponent<JumpScript>();
         grabObject = GetComponent<GrabObject>();
         flashlight = GetComponent<Flashlight>();
@@ -35,7 +35,7 @@ public class PlayerControllers : MonoBehaviour
     private void Update()
     {
         controller.Look();
-        isGrounded = Physics.Raycast(transform.position,Vector3.down,2*0.5f +0.2f, ground);
+        isGrounded = Physics.Raycast(transform.position,Vector3.down,2.5f*0.5f +0.2f, ground);
 
         if (Input.GetKeyDown(KeyCode.F)) 
         {
@@ -43,7 +43,6 @@ public class PlayerControllers : MonoBehaviour
         }
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-
             jumpScript.Jump();
         }
         if (Input.GetKeyDown(KeyCode.E)) 

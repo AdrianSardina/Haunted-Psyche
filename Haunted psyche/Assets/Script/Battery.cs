@@ -6,16 +6,20 @@ public class Battery : MonoBehaviour,IsItem
 {
     string name;
     float chargeRate;
+    Flashlight flashlight;
     string IsItem.Name => name;
 
     private void Start()
     {
+        flashlight = FindAnyObjectByType<Flashlight>();
         name = "Battery";
         chargeRate = 50;
     }
     void IsItem.grab()
     {
-        throw new System.NotImplementedException();
+        flashlight.Recharge(chargeRate);
+        Debug.Log("linterna recargada");
+        Destroy(gameObject);
     }
 
     

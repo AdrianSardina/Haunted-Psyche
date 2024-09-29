@@ -52,7 +52,7 @@ public class Flashlight : MonoBehaviour
         
         yield return null ;
     }
-    private void Recharge( float amount) 
+    public void Recharge( float amount) 
     {
         flashlightLevel =Mathf.Min(flashlightLevel+amount,maximunBattery) ;
     }

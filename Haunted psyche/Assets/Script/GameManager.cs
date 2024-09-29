@@ -6,8 +6,11 @@ public class GameManager : MonoBehaviour
 {
     int pickedFragments;
     int totalFragments;
+    PlayerScript player;
+
     void Start()
     {
+        player = FindAnyObjectByType<PlayerScript>();
        pickedFragments = 0;
         totalFragments = 6; 
     }
@@ -23,5 +26,8 @@ public class GameManager : MonoBehaviour
         
         //Sonidos
     }
-
+    private void Update()
+    {
+        
+    }
 }

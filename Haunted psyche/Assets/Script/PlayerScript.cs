@@ -4,21 +4,40 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    float sanity;
-    float flashlightLevel;
-    Flashlight flashlight;
-    bool isActive;
+    float currentSanity;
+    float maxSanity;
+    float drainRate;
+    
     void Start()
     {
-        sanity = 100f;
-        
-        
+        maxSanity = 100f;
+        currentSanity = maxSanity;
+        drainRate = 0.25f;
+        StartCoroutine(DrainSanity());
     }
 
     // Update is called once per frame
-    void Update()
+    IEnumerator DrainSanity() 
     {
-        
+        while (currentSanity >0) 
+        {
+            Debug.Log(currentSanity);
+            LowerSanity(drainRate);
+            yield return new WaitForSeconds(0.5f);
+        }
+        yield return null;
     }
-     
+    
+    public void RaiseSanity(float amount) 
+    {
+        currentSanity += Mathf.Min(currentSanity+amount, maxSanity);
+    }
+    void LowerSanity(float amount)
+    {
+        currentSanity += Mathf.Max(currentSanity + amount, maxSanity);
+    }
+    public float GetCurrentSanity() 
+    {
+        return this.currentSanity;
+    } 
 }
