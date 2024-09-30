@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    
     int pickedFragments;
     int totalFragments;
     PlayerScript player;
@@ -11,8 +12,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         player = FindAnyObjectByType<PlayerScript>();
-       pickedFragments = 0;
-        totalFragments = 6; 
+        pickedFragments = 0;
+        totalFragments = 6;
+       
     }
 
     public void AddFragment()

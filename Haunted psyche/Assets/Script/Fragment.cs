@@ -5,7 +5,7 @@ using UnityEngine;
 public class Fragment : MonoBehaviour, IsItem
 {
     GameManager gameManager;
-    private string name;
+    private new string name;
     
     string IsItem.Name => name;
     private void Start()

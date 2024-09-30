@@ -13,6 +13,7 @@ public class Pills : MonoBehaviour,IsItem
     public void grab()
     {
         playerScript.RaiseSanity(raiseAmount);
+        Destroy(gameObject);
     }
 
     // Start is called before the first frame update

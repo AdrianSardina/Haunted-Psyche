@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Battery : MonoBehaviour,IsItem
 {
-    string name;
+    new string name;
     float chargeRate;
     Flashlight flashlight;
     string IsItem.Name => name;

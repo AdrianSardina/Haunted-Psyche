@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
@@ -30,11 +31,11 @@ public class PlayerScript : MonoBehaviour
     
     public void RaiseSanity(float amount) 
     {
-        currentSanity += Mathf.Min(currentSanity+amount, maxSanity);
+        currentSanity = Mathf.Min(currentSanity+amount, maxSanity);
     }
     void LowerSanity(float amount)
     {
-        currentSanity += Mathf.Max(currentSanity + amount, maxSanity);
+        currentSanity -= amount; 
     }
     public float GetCurrentSanity() 
     {
