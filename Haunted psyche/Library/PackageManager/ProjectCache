@@ -13,8 +13,8 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638631800386088525
-    m_Hash: 1004370139
+      ticks: 638643701846608870
+    m_Hash: 1190948090
 m_EmbeddedPackageManifests:
   m_ManifestsStatus:
     C:/Users/Ana/OneDrive/Documentos/GitHub/Haunted-Psyche/Haunted psyche/Packages/com.merry-yellow.code-assist/package.json:
@@ -24,7 +24,7 @@ m_EmbeddedPackageManifests:
       m_ContentTrackingEnabled: 1
       m_ModificationDate:
         serializedVersion: 2
-        ticks: 638631799843266281
+        ticks: 638643701846474614
       m_Hash: 4251217072
 m_LocalPackages:
   m_LocalFileStatus: []
