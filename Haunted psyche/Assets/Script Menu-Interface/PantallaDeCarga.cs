@@ -55,6 +55,7 @@ public class PantallaDeCarga : MonoBehaviour
 
     IEnumerator CargarEscenaAsync()
     {
+        Time.timeScale = 1;
         // Empieza a cargar la escena de manera asíncrona
         AsyncOperation operacion = SceneManager.LoadSceneAsync(escenaDestino);
 
