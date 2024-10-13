@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    int items;
+    
+    int pickedFragments;
+    int totalFragments;
+    PlayerScript player;
+
     void Start()
     {
-        items = 6;
-        
+        player = FindAnyObjectByType<PlayerScript>();
+        pickedFragments = 0;
+        totalFragments = 6;
+       
     }
 
-   
-    void Update()
+    public void AddFragment()
+    {
+        pickedFragments++;
+        Debug.Log(pickedFragments);
+        if (pickedFragments == totalFragments) 
+        {
+            //Victoria
+        }
+        
+        //Sonidos
+    }
+    private void Update()
     {
         
     }

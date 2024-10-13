@@ -13,8 +13,13 @@ public class GrabObject : MonoBehaviour
     {
         if (Physics.Raycast(cameraPos.position, cameraPos.forward, out RaycastHit hit, 2f, layerMask))
         {
-            ISwitchable s = hit.transform.GetComponent<ISwitchable>();
-            s.Toggle();
+            
+            IsItem item =     hit.transform.GetComponent<IsItem>();
+            item?.grab();
+            
+            ISwitchable s =   hit.transform.GetComponent<ISwitchable>();
+            s?.Toggle();
+            
         }
     }
         
