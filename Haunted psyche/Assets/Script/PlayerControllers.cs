@@ -26,7 +26,6 @@ public class PlayerControllers : MonoBehaviour
         isRunning = false;
         isGrounded= true;
         //Actions Scripts
-        pause = FindObjectOfType<Pause>();
         controller = GetComponent<CameraController>();
         move       = GetComponent<Move>();
         jumpScript = GetComponent<JumpScript>();
@@ -37,11 +36,6 @@ public class PlayerControllers : MonoBehaviour
     {
         controller.Look();
         isGrounded = Physics.Raycast(transform.position,Vector3.down,2.5f*0.5f +0.2f, ground);
-        //Pause Game
-        if (Input.GetKeyDown(KeyCode.Escape)) 
-        {
-            pause.Toggle();
-        }
         //Flashlight
         if (Input.GetKeyDown(KeyCode.F)) 
         {
