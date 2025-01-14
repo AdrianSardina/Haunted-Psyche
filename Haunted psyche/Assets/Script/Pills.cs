@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pills : MonoBehaviour,IsItem
+public class Pills : MonoBehaviour,IPickable
 {
     PlayerScript playerScript;
     string name;
@@ -10,7 +10,7 @@ public class Pills : MonoBehaviour,IsItem
     public string Name => name;
 
     
-    public void grab()
+    public void PickUp()
     {
         playerScript.RaiseSanity(raiseAmount);
         Destroy(gameObject);
