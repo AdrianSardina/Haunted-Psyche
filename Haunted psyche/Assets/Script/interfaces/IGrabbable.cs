@@ -5,8 +5,9 @@ using UnityEngine;
 public interface IGrabbable
 {
     string Name { get; }
-     int Weight  { get; }
+    int Weight  { get; } 
+    float MaxDistance { get; }
+     void AttachObject(Transform pos);
+     void DettachObject();
 
-     void Grab();
-    
 }

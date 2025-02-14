@@ -37,7 +37,7 @@ public class PlayerControllers : MonoBehaviour
     {
         controller.Look();
         isGrounded = Physics.Raycast(transform.position,Vector3.down,2.5f*0.5f +0.2f, ground);
-        Debug.Log(isGrounded);
+    
         //Flashlight
         if (Input.GetKeyDown(KeyCode.F)) 
         {
