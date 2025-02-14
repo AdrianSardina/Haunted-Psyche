@@ -8,9 +8,18 @@ public class PlayerScript : MonoBehaviour
     float currentSanity;
     float maxSanity;
     float drainRate;
-    
+    public enum State 
+    {
+        Idle,
+        Walking,
+        Running,
+        Jumping,
+        Grabbing
+    }
+    public State currentState; 
     void Start()
     {
+        currentState = State.Idle;
         maxSanity = 100f;
         currentSanity = maxSanity;
         drainRate = 0.25f;

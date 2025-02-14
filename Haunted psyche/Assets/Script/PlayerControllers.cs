@@ -11,13 +11,14 @@ public class PlayerControllers : MonoBehaviour
     bool isRunning;
     bool isGrounded;
     [SerializeField] LayerMask ground;
+    
     #endregion
 
     #region scripts
     CameraController controller;
     Move move;
     JumpScript jumpScript;
-    GrabObject grabObject;
+    PickObject pickObject;
     Flashlight flashlight;
     Pause pause;
     #endregion
@@ -29,13 +30,14 @@ public class PlayerControllers : MonoBehaviour
         controller = GetComponent<CameraController>();
         move       = GetComponent<Move>();
         jumpScript = GetComponent<JumpScript>();
-        grabObject = GetComponent<GrabObject>();
+        pickObject = GetComponent<PickObject>();
         flashlight = GetComponent<Flashlight>();
     }
     private void Update()
     {
         controller.Look();
         isGrounded = Physics.Raycast(transform.position,Vector3.down,2.5f*0.5f +0.2f, ground);
+    
         //Flashlight
         if (Input.GetKeyDown(KeyCode.F)) 
         {
@@ -44,12 +46,13 @@ public class PlayerControllers : MonoBehaviour
         //Jump
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
+           
             jumpScript.Jump();
         }
         //Interact
         if (Input.GetKeyDown(KeyCode.E)) 
         {
-            grabObject.Grab();
+            pickObject.Grab();
         }
     }
 
